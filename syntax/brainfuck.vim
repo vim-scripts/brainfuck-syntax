@@ -34,6 +34,8 @@ if version >= 508 || !exists("did_brainfuck_syn_inits")
   HiLink bfSlip    Conditional
   HiLink bfIO      PreProc
   HiLink bfComment Comment
+
+  delcommand HiLink
 endif
 
 let b:current_syntax = "brainfuck"
