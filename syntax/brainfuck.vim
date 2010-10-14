@@ -1,7 +1,9 @@
 " Vim syntax file
-" Language:     brainfuck
-" Maintainer:   Mathias Panzenböck <grosser.meister.morti@gmx.at>
-" Last Change:  2003 Jul 18
+" Language:     Brainfuck
+" Maintainer:   Mathias PanzenbÃ¶ck <grosser.meister.morti@gmx.at>
+" Version:      1.0.2
+" Last Change:  2010 Oct 14
+" URL:          http://www.vim.org/scripts/script.php?script_id=716
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -16,10 +18,9 @@ endif
 
 syn match bfMath    "[+-]"
 syn match bfPointer "[<>]"
-syn match bfSlip    "[[\]]"
+syn match bfLoop    "[[\]]"
 syn match bfIO      "[.,]"
-
-syn match bfComment "\([^+-<>[\]]\|[0-9;:/]\)\+"
+syn match bfComment "[^+\-<>[\].,]\+"
 
 if version >= 508 || !exists("did_brainfuck_syn_inits")
   if version < 508
@@ -31,7 +32,7 @@ if version >= 508 || !exists("did_brainfuck_syn_inits")
 
   HiLink bfMath    Identifier
   HiLink bfPointer Type
-  HiLink bfSlip    Conditional
+  HiLink bfLoop    Conditional
   HiLink bfIO      PreProc
   HiLink bfComment Comment
 
